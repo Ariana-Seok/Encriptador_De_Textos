@@ -7,7 +7,11 @@ const CODIGOS = {
                 u: "ufat"
             };
 
+// Vector de las claves del diccionario CODIGOS.
+let vocales = Object.keys(CODIGOS);
+
 let contenedorTraductor = document.querySelector('.contenedor_traductor');
+
 
 
 function encriptarTexto(){
@@ -19,6 +23,8 @@ function encriptarTexto(){
 
         if(verificarTexto(textoIngresado)){
             let textoEncriptado = "";
+
+
 
             for(let i = 0; i < textoIngresado.length; i++){
                 if(textoIngresado[i] === 'a'){
@@ -36,7 +42,7 @@ function encriptarTexto(){
                 }
             }
 
-            mostrarTraduccion(textoEncriptado);
+            mostrarTraduccion(capitalizarPrimeraLetra(textoEncriptado));
             console.log(`Texto encriptado ${textoEncriptado}`);
         }
     }
@@ -44,8 +50,6 @@ function encriptarTexto(){
 
 function desencriptarTexto(){
     let textoIngresado = document.getElementById('texto').value;
-    // Vector de las claves del diccionario CODIGOS.
-    let vocales = Object.keys(CODIGOS);
 
     if(textoIngresado){
         let textoDesencriptado = textoIngresado;
@@ -54,39 +58,12 @@ function desencriptarTexto(){
             textoDesencriptado = textoDesencriptado.replaceAll(CODIGOS[vocales[i]], vocales[i]);
         }
 
-        mostrarTraduccion(textoDesencriptado);
+        mostrarTraduccion(capitalizarPrimeraLetra(textoDesencriptado));
         console.log(`Texto desencriptado ${textoDesencriptado}`);
     }
 }
 
-function esVocal(letra, vocales){
-    let esVocal = false;
-    let indice = 0;
 
-    
-    while (!esVocal && indice < vocales.length){
-        if(letra === vocales[indice]){
-            esVocal = true;
-        }
-
-        indice++;
-    }
-    return esVocal;
-}
-
-
-function esCodigoValido(texto){
-    let esCodigo = false;
-    let codigos = Object.values(CODIGOS);
-    while(!esCodigo && indice < codigos.length){
-        if(texto === codigos[indice]){
-            esCodigo = true;
-        }
-        indice++;
-    }
-
-    return esCodigo;
-}
 
 function verificarTexto(texto){
     let regex = /^[a-zA-Z0-9\s]+$/;
@@ -143,19 +120,38 @@ function mostrarTraduccion(textoEncriptado){
     botonCopiar.classList.add('btn');
     botonCopiar.id = 'btnCopiar';
 
+    botonCopiar.onclick = function() {
+        copiarTexto(textoEncriptado);
+    }
+
     contenedorTraductor.appendChild(textoTraducido);
     contenedorTraductor.appendChild(botonCopiar);
 
-    textoTraducido.style.width = '85%';
+    textoTraducido.style.width = '90%';
     textoTraducido.style.textAlign = 'start';
+    textoTraducido.style.overflowWrap = 'break-word';
     contenedorTraductor.style.justifyContent = 'space-between';
     contenedorTraductor.style.padding = '17px 8px';
     contenedorTraductor.style.width = '95%';
 }
 
-function copiarTexto(){
-
+function capitalizarPrimeraLetra(texto){
+    return texto.charAt(0).toUpperCase() + texto.slice(1).toLowerCase();
 }
+
+function copiarTexto(textoTraducido){
+    // Utilizo API de Clipboard para copiar el texto.
+
+    navigator.clipboard.writeText(textoTraducido)
+        .then(() => {
+            alert("Texto copiado");
+        })
+        .catch((err) => {
+            console.error(`Error al copiar texto: ${err}`);
+        })
+    
+}
+
 
 
 
