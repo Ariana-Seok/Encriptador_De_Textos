@@ -7,10 +7,13 @@ body{
     display: flex;
     flex-direction: column;
     background: #F3F5FC;
+    margin: 0;
+    min-height: 100vh;
 }
 
 main{
     padding: 20px;
+    flex-grow: 1;
 }
 
 .logo{
@@ -28,7 +31,7 @@ main{
 .campo_texto{
     width: 100%;
     height: auto;
-    min-height: 30vh;
+    min-height: 18vh;
     box-sizing: border-box;
     background: #F3F5FC;
     font-size: 1.6rem;
@@ -147,6 +150,32 @@ main{
     font-size: 1.1rem;
 }
 
+footer{
+    margin-top: auto;
+    background-color: #072B61;
+    
+}
+
+.info_desarrolladora{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 1.8;
+    font-size: 0.8rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.info_desarrolladora p a, .info_desarrolladora p{
+    color:#F3F5FC;
+    text-decoration: none;
+}
+
+.info_desarrolladora p span{
+    font-weight: 600;
+}
+
 
 @media screen and (min-width: 1180px){
     .logo{
@@ -154,7 +183,7 @@ main{
     }
 
     .campo_texto{
-        height: 55vh;
+        height: 45vh;
     }
 
     .contenedor_traductor{
@@ -176,7 +205,7 @@ main{
         top: 30px;
         right: 120px;
         width: 50vh;
-        height: 88vh;
+        height: 82vh;
     }
 
     .contenedor_traductor{
@@ -193,6 +222,13 @@ main{
     .contenedor_imagen img{
         display: block;
         
+    }
+
+    .info_desarrolladora{
+        flex-direction: row;
+        justify-content:space-evenly;
+        align-items: center;
+        padding: 12px;
     }
 
 }
