@@ -146,7 +146,7 @@ main{
 }
 
 
-@media screen and (min-width: 1150px){
+@media screen and (min-width: 1180px){
     .logo{
         left: 30px;
     }
@@ -184,6 +184,8 @@ main{
 
     .contenedor_traductor p {
         line-height: 1.3;
+        overflow-y: auto;
+        
     }
 
     .contenedor_imagen img{
