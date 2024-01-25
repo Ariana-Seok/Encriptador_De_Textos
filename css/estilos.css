@@ -1,4 +1,29 @@
+/*Fuente importada*/
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&display=swap');
+
+:root{
+    /*Dark blue*/
+    --DarkBlue100: #609ED4;
+    --DarkBlue200: #356EA9;
+    --DarkBlue300: #0A3871;
+    --DarkBlue400: #052051;
+
+    /*Gray*/
+    --gray100: #CED4DA;
+    --gray200: #ADB5BD;
+    --gray300: #868E96;
+    --gray400: #495057;
+    --gray500: #343A40;
+
+    /*Light blue*/
+
+    --lightBlue100:#F3F5FC;
+    --lightBlue200:#EFF1FA;
+    --lightBlue300:#E9ECF8;
+    --lightBlue400:#AAB2D5;
+    --lightBlue500:#757FB2;
+}
+
 *{
     font-family: 'Inter', sans-serif;
 }
@@ -6,7 +31,7 @@
 body{
     display: flex;
     flex-direction: column;
-    background: #F3F5FC;
+    background: var(--lightBlue100);
     margin: 0;
     min-height: 100vh;
 }
@@ -33,10 +58,10 @@ main{
     height: auto;
     min-height: 18vh;
     box-sizing: border-box;
-    background: #F3F5FC;
+    background: var(--lightBlue100);
     font-size: 1.6rem;
     font-weight: 500;
-    color: #0A3871;
+    color: var(--DarkBlue300);
     text-align: left;
     outline: none;
     border: none;
@@ -45,7 +70,7 @@ main{
 }
 
 ::placeholder{
-    color: #0A3871;
+    color: var(--DarkBlue300);
     text-align: left;
 }
 
@@ -76,25 +101,25 @@ main{
 }
 
 .btn:first-child{
-    background: #0A3871;
-    color: #F3F5FC;
+    background: var(--DarkBlue300);
+    color: var(--lightBlue100);
 }
 
 .btn:first-child:hover{
     background: #072B61;
-    color: #F3F5FC;
+    color: var(--lightBlue100);
 }
 
 .btn:last-child{
     background: transparent;
-    border: 1px solid #0A3871;
-    color: #0A3871;
+    border: 1px solid var(--DarkBlue300);
+    color: var(--DarkBlue300);
 }
 
 .btn:last-child:hover{
-    background:#EFF1FA;
-    border: 1px solid #0A3871;
-    color: #0A3871;
+    background:var(--lightBlue200);
+    border: 1px solid var(--DarkBlue300);
+    color: var(--DarkBlue300);
 }
 
 .contenedor_traductor{
@@ -123,7 +148,7 @@ main{
     padding: 9px 20px 20px 20px;
     font-weight: 300;
     font-size: 1.1rem;
-    color: #495057;
+    color: var(--gray400);
 }
 
 .contenedor_traductor p span{
@@ -131,7 +156,7 @@ main{
     padding-bottom: 15px;
     font-weight: bold;
     font-size: 1.3rem;
-    color:#343A40;
+    color:var(--gray500);
 }
 
 
@@ -168,7 +193,7 @@ footer{
 }
 
 .info_desarrolladora p a, .info_desarrolladora p{
-    color:#F3F5FC;
+    color:var(--lightBlue100);
     text-decoration: none;
 }
 
