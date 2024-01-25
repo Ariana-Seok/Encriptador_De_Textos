@@ -1,4 +1,3 @@
-import rutaImagen from "../assets/img/Muneco.png";
 let sinTraduccion = true;
 const CODIGOS = {
                 a: "ai",
@@ -90,7 +89,7 @@ function mostrarMensajeSinTraduccion(){
         
     // Creo una etiqueta imagen
     let imagen = document.createElement('img');
-    imagen.src = rutaImagen;
+    imagen.src = "/Encriptador_De_Textos/assets/img/Muneco.png"
 
 
     // Creo una clase para el div
