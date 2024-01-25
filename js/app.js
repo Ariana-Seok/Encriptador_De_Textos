@@ -1,3 +1,4 @@
+let rutaImagen = '../assets/img/Muneco.png';
 let sinTraduccion = true;
 const CODIGOS = {
                 a: "ai",
@@ -89,7 +90,7 @@ function mostrarMensajeSinTraduccion(){
         
     // Creo una etiqueta imagen
     let imagen = document.createElement('img');
-    imagen.src = '../assets/img/Muneco.png';
+    imagen.src = rutaImagen;
 
 
     // Creo una clase para el div
