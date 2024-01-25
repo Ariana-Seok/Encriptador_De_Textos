@@ -1,4 +1,4 @@
-let rutaImagen = '../assets/img/Muneco.png';
+import rutaImagen from "../assets/img/Muneco.png";
 let sinTraduccion = true;
 const CODIGOS = {
                 a: "ai",
