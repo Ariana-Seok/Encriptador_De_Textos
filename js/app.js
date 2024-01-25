@@ -89,7 +89,7 @@ function mostrarMensajeSinTraduccion(){
         
     // Creo una etiqueta imagen
     let imagen = document.createElement('img');
-    imagen.src = "/Encriptador_De_Textos/assets/img/Muneco.png"
+    imagen.src = "/Encriptador_De_Textos/assets/img/Muneco.png";
 
 
     // Creo una clase para el div
